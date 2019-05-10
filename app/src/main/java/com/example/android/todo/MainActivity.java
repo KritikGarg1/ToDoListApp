@@ -36,25 +36,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View arg0) {
 
-                        final Dialog dialog = new Dialog(context);
-                        dialog.setContentView(R.layout.custom);
-                        dialog.setTitle("Title");
-
-
-                        TextView text = (TextView) dialog.findViewById(R.id.text);
-                        text.setText("Add Task");
-
-
-                        Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-
-                        dialogButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                dialog.dismiss();
-                            }
-                        });
-
-                        dialog.show();
+                    custom_dialog dialog= new custom_dialog();
+                    dialog.show(getSupportFragmentManager(),"add task");
                     }
                 });
             }
